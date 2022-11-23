@@ -33,3 +33,15 @@ def query(years_low, years_high, conf):
                 row.append("")
         rows.append(row)
     return rows
+
+
+def collectDoi(res):
+    DoiSet = set()
+    for data in res:
+        doi = data[3]
+        index = doi.find('.org/')
+        if index == -1:
+            print('Error in finding .org/: ', doi)
+        else:
+            DoiSet.add(doi[index+5:])
+    return DoiSet
