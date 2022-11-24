@@ -10,6 +10,8 @@ Based on Qlever
 
 1. [Sci-hub API in python](https://github.com/Tishacy/SciDownl)
 
+2. [ACM digital library](https://dl.acm.org)
+
 # Citation Impact Collection
 
 [Semantic Scholar](https://www.semanticscholar.org)
