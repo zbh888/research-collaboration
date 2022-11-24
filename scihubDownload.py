@@ -1,6 +1,6 @@
 from scidownl import scihub_download
 
-def downloadPDF(DOIs, path):
+def downloadPDF_sci(DOIs, path):
     source = []
     for doi in DOIs:
         source.append((doi, 'doi', path))
