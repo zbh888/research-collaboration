@@ -49,11 +49,13 @@ def getCitationsByYear(DOI):
                 if year:
                     hash_map[year] += 1
 
-        if ('next' in response.json()):
-            offset = response.json()['next']
+        if ('next' in JSON):
+            offset = JSON['next']
         else:
             offset = -1
 
         offset_string = '&offset=' + str(offset) + '&limit=1000'
 
     return hash_map
+
+print(getCitationsByYear('10.1145/1148170.1148267'))
