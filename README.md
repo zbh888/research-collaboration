@@ -12,6 +12,8 @@ Based on Qlever
 
 2. [ACM digital library](https://dl.acm.org)
 
+3. [PyPaperBot](https://github.com/ferru97/PyPaperBot)
+
 # Citation Impact Collection
 
 [Semantic Scholar](https://www.semanticscholar.org)
