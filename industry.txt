@@ -1,0 +1,102 @@
+	Apple	
+	Microsoft	
+	Samsung 
+	Alphabet	
+	AT&T	
+	Amazon	
+	Verizon 
+	China Mobile	
+	Walt Disney	
+		Facebook	
+		Alibaba	
+		Intel	
+		Softbank	
+		IBM	
+		Tencent Holdings	
+		Nippon 	
+		Cisco Systems	
+		Oracle	
+		Deutsche Telekom	
+		Taiwan Semiconductor	
+		KDDI	
+		SAP	
+		Telefónica	
+		América Móvil	
+		Hon Hai Precision
+		Dell Technologies
+		Orange
+		China Telecom
+		SK Hynix
+		Accenture
+		Broadcom	
+		Micron Technology
+		Qualcomm
+		PayPal	
+		China Unicom
+		HP	
+		BCE	
+		Tata Consultancy Services	
+		Automatic Data Processing	
+		BT Group	
+		Mitsubishi Electric	
+		Canon	
+		Booking Holdings	
+		Saudi Telecom	
+		JD.com	
+		Texas Instruments	
+		Netflix	
+		Philips	Health Care 
+		Etisalat
+		Baidu	
+		ASML Holding	
+		Salesforce.com	
+		Applied Materials	
+		Recruit Holdings	
+		SingTel	
+		Adobe	
+		Xiaomi	
+		Telstra	
+		VMware	
+		TE Connectivity	
+		SK Holdings	
+		Murata Manufacturing	
+		Cognizant	
+		NVIDIA	
+		eBay	
+		Telenor	
+		Vodafone	
+		SK Telecom	
+		Vivendi	
+		Naspers	
+		Infosys	
+		China Tower Corp.	
+		Swisscom	
+		Corning	
+		Fidelity National Information	
+		Rogers 	
+		Nintendo	
+		Kyocera	
+		NXP 
+		DISH Network
+		Rakuten	
+		Altice 
+		TELUS	
+		Capgemini	
+		Activision Blizzard	
+		Analog Devices	
+		Lam Research	
+		DXC Technology	
+		Legend Holding	
+		Lenovo 
+		NetEase	
+		Tokyo Electron	
+		Keyence	
+		Telkom Indonesia	
+		Nokia	
+		Fortive
+		Ericsson	
+		Fiserv	
+		Fujitsu	
+		Hewlett Packard Enterprise	
+		Google
+		Meta
