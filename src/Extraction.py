@@ -11,8 +11,8 @@ def affiliationExtraction(xml_file):
         for author_affiliation in affiliation:
             if author_affiliation.text.strip() != '':
                 affiliation_list.append(author_affiliation.text)
-            if len(affiliation_list) != 0:
-                res.append(' '.join(affiliation_list))
+        if len(affiliation_list) != 0:
+            res.append(' '.join(affiliation_list))
     return res
 
 def doiExtraction(xml_file):
