@@ -27,7 +27,7 @@ def getPaperID(title):
   '''
   
   After you get paper ID and title from semantic scholar, check if that title matches with the original title of the paper. You can use this:
-  result = getPaperID(title)
+  result = getPaperID(original_title)
   temp = difflib.SequenceMatcher(None, original_title, result[1])
   if temp.ratio() > 0.85:
       # it means we can use this paperID because they are the same papers as the titles match.
