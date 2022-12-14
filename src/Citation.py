@@ -1,6 +1,7 @@
 import requests
 import difflib
 from collections import defaultdict
+import random
 
 def getCitationPublication(data):
     finaldata = []
