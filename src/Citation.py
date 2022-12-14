@@ -9,6 +9,7 @@ def getCitationPublication(data):
     for each in data:
         citation = -1
         title = each[1]
+        doi = each[2]
         if len(title) != 0:
             paperID, temp_title = getPaperID(title[0])
             diff = difflib.SequenceMatcher(None, title[0], temp_title)
