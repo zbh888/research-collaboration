@@ -4,6 +4,28 @@ from Process import *
 from Citation import *
 import os
 
+def write_csv(finaldata):
+    with open('result.csv', 'a') as the_file:
+        the_file.write('File,Title,DOI,AFF,Citation,Date\n')
+    for data in finaldata:
+        string = []
+        string.append(data[0])
+        if len(data[1]) == 0:
+            string.append('')
+        else:
+            string.append(str(data[1][0]).replace(',', ' '))
+        
+        if len(data[2]) == 0:
+            string.append('')
+        else:
+            string.append(str(data[2][0]))
+        string.append('-----'.join(data[3]).replace(',', ' '))
+        string.append(str(data[4]))
+        string.append(str(data[5]))
+        ','.join(string)
+        with open('result.csv', 'a') as the_file:
+            the_file.write(','.join(string) + '\n')
+
 PATH = './CL/'
 extractFirstPage(PATH)
 firstPagePath = PATH + 'FirstPage'
