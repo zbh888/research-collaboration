@@ -3,6 +3,7 @@ import difflib
 from collections import defaultdict
 import random
 
+
 def getCitationPublication(data):
     finaldata = []
     missing = []
@@ -31,6 +32,18 @@ def getCitationPublication(data):
                 continue;
         missing.append(each[0])
     return finaldata, missing
+
+def getTotalCitations(DOI):
+
+    URL = 'https://api.semanticscholar.org/graph/v1/paper/'
+    QUERY = '?fields=citationCount'
+    response = requests.get(URL + DOI + QUERY)
+    JSON = response.json()
+
+    if 'citationCount' in JSON:
+        return JSON['citationCount']
+
+    return None
 
 def getCitationsByYear(DOI):
 
