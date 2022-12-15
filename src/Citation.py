@@ -16,34 +16,26 @@ def getCitationPublication(data):
             diff = difflib.SequenceMatcher(None, title[0], temp_title)
             if diff.ratio() > 0.85:
                 dictionary = getCitationsByYear(paperID)
+                total_c = getTotalCitations(paperID)
                 if len(dictionary) != 0:
                     c,p = citation_publication(dictionary)
                     each.append(c)
                     each.append(p)
+                    each.append(total_c)
                     finaldata.append(each)
                     continue;
         if len(doi) != 0:
             dictionary = getCitationsByYear(doi[0])
+            total_c = getTotalCitations(paperID)
             if len(dictionary) != 0:
                 c,p = citation_publication(dictionary)
                 each.append(c)
                 each.append(p)
+                each.append(total_c)
                 finaldata.append(each)
                 continue;
         missing.append(each[0])
     return finaldata, missing
-
-def getTotalCitations(DOI):
-
-    URL = 'https://api.semanticscholar.org/graph/v1/paper/'
-    QUERY = '?fields=citationCount'
-    response = requests.get(URL + DOI + QUERY)
-    JSON = response.json()
-
-    if 'citationCount' in JSON:
-        return JSON['citationCount']
-
-    return None
 
 def getCitationsByYear(DOI):
 
@@ -82,6 +74,28 @@ def getCitationsByYear(DOI):
         offset_string = '&offset=' + str(offset) + '&limit=1000'
 
     return hash_map
+
+def getTotalCitations(paperID):
+
+    URL = 'https://api.semanticscholar.org/graph/v1/paper/'
+    QUERY = '?fields=citationCount'
+    S2_API_KEY = 'zr4963tPjdahwSmGYlhPJZKbAz9gigE5IOeQD8Lj'
+    headers = {'User-Agent': getUserAgent(),
+               'x-api-key': S2_API_KEY}
+
+    response = requests.get(URL + paperID + QUERY, headers=headers)
+    print(response.status_code, paperID)
+
+    if response.status_code != 200:
+        return -1
+
+    JSON = response.json()
+
+    if 'citationCount' in JSON:
+        return JSON['citationCount']
+
+    return -1
+
 
 
 def getPaperID(title):
@@ -130,3 +144,6 @@ def getUserAgent():
     user_agent = random.choice(user_agent_list)
 
     return user_agent
+
+
+
