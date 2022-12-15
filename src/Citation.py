@@ -4,12 +4,13 @@ from collections import defaultdict
 import random
 
 
-def getCitationPublication(data):
+def getCitationPublication(data, dateFunction):
     finaldata = []
     missing = []
     for each in data:
         citation = -1
         title = each[1]
+        filename = each[0]
         doi = each[2]
         if len(title) != 0:
             paperID, temp_title = getPaperID(title[0])
@@ -18,7 +19,7 @@ def getCitationPublication(data):
                 dictionary = getCitationsByYear(paperID)
                 total_c = getTotalCitations(paperID)
                 if len(dictionary) != 0:
-                    c,p = citation_publication(dictionary)
+                    c,p = citation_publication(dictionary, dateFunction, filename)
                     each.append(c)
                     each.append(p)
                     each.append(total_c)
@@ -28,7 +29,7 @@ def getCitationPublication(data):
             dictionary = getCitationsByYear(doi[0])
             total_c = getTotalCitations(paperID)
             if len(dictionary) != 0:
-                c,p = citation_publication(dictionary)
+                c,p = citation_publication(dictionary, dateFunction, filename)
                 each.append(c)
                 each.append(p)
                 each.append(total_c)
@@ -120,16 +121,17 @@ def getPaperID(title):
 
     return (JSON['data'][0]['paperId'], JSON['data'][0]['title'] )
 
-def citation_publication(s):
+def citation_publication(s, function, filename):
 
     l = sorted(s)
+    date = function(filename)
 
     three_year_count = 0
-    for i in range(len(l)):
-        if i > 2:
+    for year in l:
+        if year > date + 2:
             break
-        three_year_count += s[l[i]]
-    return three_year_count, l[0]
+        three_year_count += s[year]
+    return three_year_count, date
 
 def getUserAgent():
 

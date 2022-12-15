@@ -6,7 +6,7 @@ import os
 
 def write_csv(finaldata):
     with open('result.csv', 'a') as the_file:
-        the_file.write('File,Title,DOI,AFF,Citation,Date\n')
+        the_file.write('File,Title,DOI,AFF,Citation,Date,CitationTotal\n')
     for data in finaldata:
         string = []
         string.append(data[0])
@@ -22,9 +22,13 @@ def write_csv(finaldata):
         string.append('-----'.join(data[3]).replace(',', ' '))
         string.append(str(data[4]))
         string.append(str(data[5]))
+        string.append(str(data[6]))
         ','.join(string)
         with open('result.csv', 'a') as the_file:
             the_file.write(','.join(string) + '\n')
+
+def dateFunction(filename):
+    return int('20' + filename[1:3])
 
 PATH = './CL/'
 extractFirstPage(PATH)
@@ -38,5 +42,5 @@ client = GrobidClient(config_path="./config.json")
 client.process("processFulltextDocument", firstPagePath, output=outputPath, consolidate_citations=True, tei_coordinates=True, force=True)
 
 data, missing_affiliation = processXML(outputPath)
-finalData, missing_citations = getCitationPublication(data)
+finalData, missing_citations = getCitationPublication(data, dateFunction)
 write_csv(finalData)
