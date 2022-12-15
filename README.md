@@ -8,15 +8,11 @@ Based on Qlever
 
 # Paper Collection
 
-1. [Sci-hub API in python](https://github.com/Tishacy/SciDownl)
-
-2. [ACM digital library](https://dl.acm.org)
-
-3. [PyPaperBot](https://github.com/ferru97/PyPaperBot)
+[PyPaperBot](https://github.com/ferru97/PyPaperBot) is a useful crawler. We didn't use it though since ACL has provided download API.
 
 # Citation Impact Collection
 
-[Semantic Scholar](https://www.semanticscholar.org)
+[Semantic Scholar](https://www.semanticscholar.org) provided useful API.
 
 # Affiliation Extraction
 
@@ -29,3 +25,11 @@ Based on Qlever
 4. After you run the application from step-3, the server should start locally. Check out http://localhost:8070
 
 5. Go to the directory from step-2, run `python3 example.py`, the output would be in `resources/test_out`
+
+We used NLP tool [Grobid](https://grobid.readthedocs.io/en/latest/) to extract information from pdf files.
+
+# Classification
+
+We provided two lists of affiliations, `industry.txt` and `academia.txt`
+
+For academia affiliations, we also use keywords as filter [univerity, school, college]
