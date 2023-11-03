@@ -1,6 +1,8 @@
-# 848Final
+Hello, I didn't submit this paper to a conference because it's really something out of curiosity. And it is not relevant to my research (security).
 
-[google doc](https://docs.google.com/document/d/1UbA1VX7uknfJQgKIziQlXUtxr1hfiIAStH54WKf0IOM/edit)
+We hope you find something useful here. Our result is based on the ML model and a lot of manual work (It's reliable).  And we appreciate that you can cite our work.
+
+https://arxiv.org/pdf/2308.04524.pdf
 
 # DOI Collection
 
